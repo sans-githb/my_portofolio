@@ -1,6 +1,19 @@
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 
+document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '=')) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener('wheel', function (event) {
+    if (event.ctrlKey) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("is-active");
